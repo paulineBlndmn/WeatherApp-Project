@@ -1,0 +1,46 @@
+.container {
+  max-width: 100%;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(
+    180.3deg,
+    rgb(221, 221, 221) 5.5%,
+    rgb(110, 136, 161) 90.2%
+  );
+}
+h1 {
+  color: #668ba4;
+  margin: 30px 100px;
+  margin-bottom: 0px;
+  padding: 20px 0;
+  text-align: center;
+}
+h2 {
+  color: #668ba4;
+  margin: 0px 100px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+ul {
+  background-color: #dddddd;
+  opacity: 80%;
+  text-align: center;
+}
+a {
+  text-decoration: none;
+}
+
+input,
+button {
+  background-color: #dddddd;
+  border-radius: 10px;
+  display: block;
+  margin: 0 auto;
+  outline: none;
+  text-align: center;
+  box-shadow: 1px 1px 2px #0000;
+}
+input,
+button:hover {
+  opacity: 0.9;
+}
