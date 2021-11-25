@@ -7,6 +7,9 @@
     rgb(110, 136, 161) 90.2%
   );
 }
+.open-source-code {
+  color: #d4d6d8;
+}
 h1 {
   color: #668ba4;
   margin: 30px 100px;
