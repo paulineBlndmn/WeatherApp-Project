@@ -23,67 +23,70 @@
   </head>
   <body>
     <div class="container">
-      <h1 id="city">City</h1>
-      <h2>Date</h2>
-      <div class="row">
-        <div class="col-2">
-          <ul class="list-group">
-            <li class="list-group-item">Monday</li>
-            <li class="list-group-item">
-              <span id="temperature">17</span>
-              <a href="#" id="celsius-link"> °C</a> /<a
-                href="#"
-                id="fahrenheit-link"
-              >
-                °F</a
-              >
-            </li>
+      <div class="weather-app-wrapper">
+        <h1 id="city">City</h1>
+        <h2>Date</h2>
+        <div class="row">
+          <div class="col-2">
+            <ul class="list-group">
+              <li class="list-group-item">Monday</li>
+              <li class="list-group-item">
+                <span id="temperature">17</span>
+                <a href="#" id="celsius-link"> °C</a> /<a
+                  href="#"
+                  id="fahrenheit-link"
+                >
+                  °F</a
+                >
+              </li>
 
-            <li class="list-group-item">⛅️</li>
-          </ul>
+              <li class="list-group-item">⛅️</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="list-group">
+              <li class="list-group-item">Tuesday</li>
+              <li class="list-group-item">17°C</li>
+              <li class="list-group-item">⛅️</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="list-group">
+              <li class="list-group-item">Wednesday</li>
+              <li class="list-group-item">19°C</li>
+              <li class="list-group-item">🌤</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="list-group">
+              <li class="list-group-item">Thursday</li>
+              <li class="list-group-item">15°C</li>
+              <li class="list-group-item">🌧</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="list-group">
+              <li class="list-group-item">Friday</li>
+              <li class="list-group-item">20°C</li>
+              <li class="list-group-item">☀️</li>
+            </ul>
+          </div>
+          <div class="col-2">
+            <ul class="list-group">
+              <li class="list-group-item">Saturday</li>
+              <li class="list-group-item">21°C</li>
+              <li class="list-group-item">☀️</li>
+            </ul>
+          </div>
         </div>
-        <div class="col-2">
-          <ul class="list-group">
-            <li class="list-group-item">Tuesday</li>
-            <li class="list-group-item">17°C</li>
-            <li class="list-group-item">⛅️</li>
-          </ul>
-        </div>
-        <div class="col-2">
-          <ul class="list-group">
-            <li class="list-group-item">Wednesday</li>
-            <li class="list-group-item">19°C</li>
-            <li class="list-group-item">🌤</li>
-          </ul>
-        </div>
-        <div class="col-2">
-          <ul class="list-group">
-            <li class="list-group-item">Thursday</li>
-            <li class="list-group-item">15°C</li>
-            <li class="list-group-item">🌧</li>
-          </ul>
-        </div>
-        <div class="col-2">
-          <ul class="list-group">
-            <li class="list-group-item">Friday</li>
-            <li class="list-group-item">20°C</li>
-            <li class="list-group-item">☀️</li>
-          </ul>
-        </div>
-        <div class="col-2">
-          <ul class="list-group">
-            <li class="list-group-item">Saturday</li>
-            <li class="list-group-item">21°C</li>
-            <li class="list-group-item">☀️</li>
-          </ul>
-        </div>
+        <br />
+        <form id="search-form">
+          <input type="search" value="search" id="search-button" />
+        </form>
+       
+        <button id="current-location-button">current location</button>
+    </br>
       </div>
-      <br />
-      <form id="search-form">
-        <input type="search" value="search" id="search-button" />
-      </form>
-      <br />
-      <button id="current-location-button">current location</button>
       <p class="open-source-code">
         <a
           href="https://github.com/paulineBlndmn/WeatherApp-Project"
