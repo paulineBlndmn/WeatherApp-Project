@@ -26,7 +26,7 @@ h2 {
   text-align: center;
 }
 
-ul {
+ul.list-group {
   background-color: #dddddd;
   opacity: 80%;
   text-align: center;
@@ -55,4 +55,9 @@ input {
 input,
 button:hover {
   opacity: 0.9;
+}
+.weather-condition {
+  text-align: center;
+  color: #668ba4;
+  list-style: none;
 }

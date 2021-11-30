@@ -24,12 +24,17 @@ h2.innerHTML = `${day} ${hours}:${minutes}`;
 //life city search
 
 function showWeather(response) {
+  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
   let h1 = document.querySelector("#city");
   h1.innerHTML = `${city}`;
   let displayedTemperature = document.querySelector("#temperature");
   displayedTemperature.innerHTML = `${temperature}`;
+  let descriptionElement = document.querySelector("#description");
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  let windSpeedElement = document.querySelector("#wind-speed");
+  windSpeedElement.innerHTML = response.data.wind.speed;
 }
 function search(event) {
   event.preventDefault();
