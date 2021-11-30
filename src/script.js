@@ -1,5 +1,4 @@
 let now = new Date();
-console.log(now);
 let h2 = document.querySelector("h2");
 let days = [
   "Sunday",
@@ -34,7 +33,7 @@ function showWeather(response) {
   let descriptionElement = document.querySelector("#description");
   descriptionElement.innerHTML = response.data.weather[0].description;
   let windSpeedElement = document.querySelector("#wind-speed");
-  windSpeedElement.innerHTML = response.data.wind.speed;
+  windSpeedElement.innerHTML = Math.round(response.data.wind.speed);
 }
 function search(event) {
   event.preventDefault();
