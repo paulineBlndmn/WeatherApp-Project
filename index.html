@@ -27,8 +27,9 @@
         <h1 id="city">city</h1>
         <h2>Date</h2>
         <ul class="weather-condition">
-        <li>condition:<span id="description"></span></li>
-         <li> wind: <span id="wind-speed"></span> km/h</li> 
+        <li><span id="description">condition</span></li>
+        <li><span id="humidity">humidity</span></li>
+         <li> <span id="wind-speed">wind speed</span> </li> 
          <li> <img src="" alt="" id="icon"/></li>
         </ul>
         <div class="row">
@@ -36,9 +37,9 @@
             <ul class="list-group">
               <li class="list-group-item">Monday</li>
               <li class="list-group-item">
-                <span id="temperature"></span><a href="#" id="celsius-link">°C</a>/<a
+                <span id="temperature"></span><a href="#" id="celsius-link" class="link">°C</a>/<a
                   href="#"
-                  id="fahrenheit-link"
+                  id="fahrenheit-link"class="link"
                 >°F</a>
               </li>
 
@@ -83,13 +84,14 @@
         </div>
         <br />
         <form id="search-form">
-          <input type="search" value="search" id="search-button" autocomplete="off" />
+          <input type="search" value="search" id="search-button" autocomplete="off" onfocus="this.value=''" />
         </form>
         
        
         <button id="current-location-button">current location</button>
     </br>
       </div>
+      <footer>
       <p class="open-source-code">
         <a
           href="https://github.com/paulineBlndmn/WeatherApp-Project"
@@ -98,6 +100,7 @@
         >
         by Pauline Blindeman
       </p>
+      </footer>
     </div>
     <script src="src/script.js"></script>
   </body>

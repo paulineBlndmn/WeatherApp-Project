@@ -35,7 +35,6 @@ a {
   text-decoration: none;
 }
 button {
-  background-color: #dddddd;
   border-radius: 10px;
   display: block;
   margin: 0 auto;
@@ -60,4 +59,10 @@ button:hover {
   text-align: center;
   color: #668ba4;
   list-style: none;
+}
+.link {
+  color: black;
+}
+.link:hover {
+  color: black;
 }
