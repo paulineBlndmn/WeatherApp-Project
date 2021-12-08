@@ -25,81 +25,113 @@
     <div class="container">
       <div class="weather-app-wrapper">
         <h1 id="city">city</h1>
-        <h2>Date</h2>
-        <ul class="weather-condition">
-        <li><span id="description">condition</span></li>
-        <li><span id="humidity">humidity</span></li>
-         <li> <span id="wind-speed">wind speed</span> </li> 
-         <li> <img src="" alt="" id="icon"/></li>
-        </ul>
-        <div class="row">
-          <div class="col-2">
-            <ul class="list-group">
-              <li class="list-group-item">Monday</li>
-              <li class="list-group-item">
-                <span id="temperature"></span><a href="#" id="celsius-link" class="link">°C</a>/<a
-                  href="#"
-                  id="fahrenheit-link"class="link"
-                >°F</a>
-              </li>
+        <h2 id="date">Date</h2>
+        <h2>
+          <div class="weather-forecast-temperature">
+            <span id="temperature"></span
+            ><a href="#" id="celsius-link" class="convertion-link">°C</a>/<a
+              href="#"
+              id="fahrenheit-link"
+              class="convertion-link"
+              >°F</a
+            >
+          </div>
+        </h2>
 
-              <li class="list-group-item">⛅️</li>
-            </ul>
-          </div>
-          <div class="col-2">
-            <ul class="list-group">
-              <li class="list-group-item">Tuesday</li>
-              <li class="list-group-item">17°C</li>
-              <li class="list-group-item">⛅️</li>
-            </ul>
-          </div>
-          <div class="col-2">
-            <ul class="list-group">
-              <li class="list-group-item">Wednesday</li>
-              <li class="list-group-item">19°C</li>
-              <li class="list-group-item">🌤</li>
-            </ul>
-          </div>
-          <div class="col-2">
-            <ul class="list-group">
-              <li class="list-group-item">Thursday</li>
-              <li class="list-group-item">15°C</li>
-              <li class="list-group-item">🌧</li>
-            </ul>
-          </div>
-          <div class="col-2">
-            <ul class="list-group">
-              <li class="list-group-item">Friday</li>
-              <li class="list-group-item">20°C</li>
-              <li class="list-group-item">☀️</li>
-            </ul>
-          </div>
-          <div class="col-2">
-            <ul class="list-group">
-              <li class="list-group-item">Saturday</li>
-              <li class="list-group-item">21°C</li>
-              <li class="list-group-item">☀️</li>
-            </ul>
+        <ul class="weather-condition">
+          <li><span id="description">condition</span></li>
+          <li><span id="humidity">humidity</span></li>
+          <li><span id="wind-speed">wind speed</span></li>
+          <li><img src="" alt="" id="icon" /></li>
+        </ul>
+        <div class="weather-forecast">
+          <div class="row">
+            <div class="col-2">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="weather-forecast-date">Monday</div>
+                </li>
+                <li class="list-group-item">
+                  <div class="weather-forecast-temperature">
+                    <span id="temperature"></span
+                    ><a href="#" id="celsius-link" class="link">°C</a>/<a
+                      href="#"
+                      id="fahrenheit-link"
+                      class="link"
+                      >°F</a
+                    >
+                  </div>
+                </li>
+
+                <li class="list-group-item">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt=""
+                    width="30px"
+                  />
+                </li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="list-group">
+                <li class="list-group-item">Tuesday</li>
+                <li class="list-group-item">17°C</li>
+                <li class="list-group-item">⛅️</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="list-group">
+                <li class="list-group-item">Wednesday</li>
+                <li class="list-group-item">19°C</li>
+                <li class="list-group-item">🌤</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="list-group">
+                <li class="list-group-item">Thursday</li>
+                <li class="list-group-item">15°C</li>
+                <li class="list-group-item">🌧</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="list-group">
+                <li class="list-group-item">Friday</li>
+                <li class="list-group-item">20°C</li>
+                <li class="list-group-item">☀️</li>
+              </ul>
+            </div>
+            <div class="col-2">
+              <ul class="list-group">
+                <li class="list-group-item">Saturday</li>
+                <li class="list-group-item">21°C</li>
+                <li class="list-group-item">☀️</li>
+              </ul>
+            </div>
           </div>
         </div>
         <br />
         <form id="search-form">
-          <input type="search" value="search" id="search-button" autocomplete="off" onfocus="this.value=''" />
+          <input
+            type="search"
+            value="search"
+            id="search-button"
+            autocomplete="off"
+            onfocus="this.value=''"
+          />
         </form>
-        
-       
+
         <button id="current-location-button">current location</button>
-    </br>
+        <br />
       </div>
       <footer>
-      <p class="open-source-code">
-        <a
-          href="https://github.com/paulineBlndmn/WeatherApp-Project"
-          target="blank"
-          >open source code</a
-        >
-        by Pauline Blindeman
-      </p>
+        <p class="open-source-code">
+          <a
+            href="https://github.com/paulineBlndmn/WeatherApp-Project"
+            target="blank"
+            >open source code</a
+          >
+          by Pauline Blindeman
+        </p>
       </footer>
     </div>
     <script src="src/script.js"></script>

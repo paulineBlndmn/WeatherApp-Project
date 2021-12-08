@@ -18,7 +18,8 @@ let minutes = now.getMinutes();
 if (minutes < 10) {
   minutes = `0${minutes}`;
 }
-h2.innerHTML = `${day} ${hours}:${minutes}`;
+let displayedDate = document.querySelector("#date");
+displayedDate.innerHTML = `${day} ${hours}:${minutes}`;
 
 //life city search
 
@@ -93,15 +94,15 @@ function changeToFahrenheit(event) {
   let fahrenheit = document.querySelector("#temperature");
   fahrenheit.innerHTML = Math.round(celsiusTemperature * 1.8 + 32);
 }
-
-let celsiusTemperature = null;
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeToFahrenheit);
-
 function changeToCelsius(event) {
   event.preventDefault();
   let celsius = document.querySelector("#temperature");
   celsius.innerHTML = Math.round(celsiusTemperature);
 }
+
+let celsiusTemperature = null;
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", changeToFahrenheit);
+
 let changeBack = document.querySelector("#celsius-link");
 changeBack.addEventListener("click", changeToCelsius);
