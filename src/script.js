@@ -20,6 +20,38 @@ if (minutes < 10) {
 }
 let displayedDate = document.querySelector("#date");
 displayedDate.innerHTML = `${day} ${hours}:${minutes}`;
+//
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let forecastDays = ["Tuesday", "Wednesday", "Thursday", "Friday"];
+  forecastDays.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <ul class="list-group">
+                <li class="list-group-item">
+                  <div class="weather-forecast-date">${day}</div>
+                </li>
+                <li class="list-group-item">
+                  <div class="weather-forecast-temperature">
+                    16°C
+                  </div>
+                </li>
+                <li class="list-group-item">
+                  <img
+                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    alt=""
+                    width="30px"
+                  />
+                </li>
+              </ul>
+            </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 //life city search
 
@@ -57,9 +89,6 @@ function search(event) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
   axios.get(apiUrl).then(showWeather);
 }
-
-let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
 
 //current location weather
 
@@ -101,8 +130,16 @@ function changeToCelsius(event) {
 }
 
 let celsiusTemperature = null;
+
+displayForecast();
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", search);
+
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", changeToFahrenheit);
 
-let changeBack = document.querySelector("#celsius-link");
-changeBack.addEventListener("click", changeToCelsius);
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", changeToCelsius);
+
+displayForecast();
