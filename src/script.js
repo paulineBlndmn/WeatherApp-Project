@@ -146,26 +146,7 @@ currentLocationButton.addEventListener("click", getCurrentPosition);
 
 //
 
-function changeToFahrenheit(event) {
-  event.preventDefault();
-  let fahrenheit = document.querySelector("#temperature");
-  fahrenheit.innerHTML = Math.round(celsiusTemperature * 1.8 + 32);
-}
-function changeToCelsius(event) {
-  event.preventDefault();
-  let celsius = document.querySelector("#temperature");
-  celsius.innerHTML = Math.round(celsiusTemperature);
-}
-
-let celsiusTemperature = null;
-
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", changeToFahrenheit);
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", changeToCelsius);
 
 //search("New York");
