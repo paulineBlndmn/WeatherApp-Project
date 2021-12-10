@@ -21,34 +21,55 @@ if (minutes < 10) {
 let displayedDate = document.querySelector("#date");
 displayedDate.innerHTML = `${day} ${hours}:${minutes}`;
 //
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+  return days[day];
+}
+//
 function displayForecast(response) {
-  console.log(response);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let forecastDays = ["Tuesday", "Wednesday", "Thursday", "Friday"];
-  forecastDays.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `
             <div class="col-2">
               <ul class="list-group">
                 <li class="list-group-item">
-                  <div class="weather-forecast-date">${day}</div>
+                  <div class="weather-forecast-date">${formatDay(
+                    forecastDay.dt
+                  )}</div>
                 </li>
                 <li class="list-group-item">
                   <div class="weather-forecast-temperature">
-                    16°C
+                    ${Math.round(forecastDay.temp.day)}°C
                   </div>
                 </li>
                 <li class="list-group-item">
                   <img
-                    src="http://openweathermap.org/img/wn/04d@2x.png"
+                    src="http://openweathermap.org/img/wn/${
+                      forecastDay.weather[0].icon
+                    }@2x.png"
                     alt=""
                     width="30px"
                   />
                 </li>
               </ul>
             </div>`;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
@@ -57,14 +78,12 @@ function displayForecast(response) {
 //life city search
 
 function getForecast(coordinates) {
-  console.log(coordinates);
   let apiKey = "d40278b3a2665b090377296b072f8feb";
   let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayForecast);
 }
 
 function showWeather(response) {
-  console.log(response);
   let temperature = Math.round(response.data.main.temp);
   let city = response.data.name;
   let h1 = document.querySelector("#city");
@@ -139,8 +158,6 @@ function changeToCelsius(event) {
 }
 
 let celsiusTemperature = null;
-
-displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", search);
