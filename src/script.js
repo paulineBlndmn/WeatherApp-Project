@@ -10,25 +10,9 @@ let days = [
   "Saturday",
 ];
 let day = days[now.getDay()];
-let months = [
-  "January",
-  "February",
-  "March",
-  "April",
-  "May",
-  "June",
-  "July",
-  "August",
-  "September",
-  "October",
-  "November",
-  "December",
-];
-let month = months[now.getMonth()];
-let date = now.getDate();
-let year = now.getFullYear();
+
 let displayedDate = document.querySelector("#date");
-displayedDate.innerHTML = `${day} ${month} ${date} ${year}`;
+displayedDate.innerHTML = `${day}`;
 //
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
@@ -73,7 +57,7 @@ function displayForecast(response) {
                       forecastDay.weather[0].icon
                     }@2x.png"
                     alt=""
-                    width="30px"
+                    width="45px"
                   />
                 </li>
               </ul>
@@ -108,7 +92,7 @@ function showWeather(response) {
   humidityElement.innerHTML = `humidity: ${response.data.main.humidity}%`;
   windSpeedElement.innerHTML = `wind: ${Math.round(
     response.data.wind.speed
-  )}km/h`;
+  )}m/s`;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
