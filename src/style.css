@@ -60,3 +60,6 @@ button:hover {
   color: #668ba4;
   list-style: none;
 }
+.weather-app {
+  text-align: center;
+}

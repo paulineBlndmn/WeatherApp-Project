@@ -38,22 +38,37 @@
           <li><span id="wind-speed">wind speed</span></li>
           <li><img src="" alt="" id="icon" /></li>
         </ul>
-        <div class="weather-forecast" id="forecast"></div>
 
-        <br />
-        <form id="search-form">
-          <input
-            type="search"
-            value="search"
-            id="search-button"
-            autocomplete="off"
-            onfocus="this.value=''"
-          />
-        </form>
+        <div class="weather-forecast" id="forecast">
+          <form id="search-form">
+            <div class="row">
+              <div class="col-4"></div>
+              <div class="col-3">
+                <input
+                  type="search"
+                  placeholder="Type a city"
+                  class="form-control"
+                  id="search-button"
+                  autocomplete="off"
+                  onfocus="this.value=''"
+                />
+              </div>
+              <div class="col-2">
+                <input
+                  type="submit"
+                  value="search"
+                  class="btn btn-secondary w-100 pl-n2"
+                />
+              </div>
+              <div class="col-3"></div>
+            </div>
+          </form>
+        </div>
 
         <button id="current-location-button">current location</button>
         <br />
       </div>
+
       <footer>
         <p class="open-source-code">
           <a
