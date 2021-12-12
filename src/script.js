@@ -110,12 +110,15 @@ function showWeather(response) {
   getForecast(response.data.coord);
 }
 
-function search(event) {
+function search(city) {
+  let apiKey = "d40278b3a2665b090377296b072f8feb";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(showWeather);
+}
+function handleSubmit(event) {
   event.preventDefault();
   let cityInput = document.querySelector("#search-button");
-  let apiKey = "d40278b3a2665b090377296b072f8feb";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${cityInput.value}&units=metric&appid=${apiKey}`;
-  axios.get(apiUrl).then(showWeather);
+  search(cityInput.value);
 }
 
 //current location weather
@@ -147,6 +150,6 @@ currentLocationButton.addEventListener("click", getCurrentPosition);
 //
 
 let form = document.querySelector("#search-form");
-form.addEventListener("submit", search);
+form.addEventListener("submit", handleSubmit);
 
-//search("New York");
+search("Shanghai");
