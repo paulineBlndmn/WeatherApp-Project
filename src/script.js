@@ -1,19 +1,3 @@
-let now = new Date();
-let h2 = document.querySelector("h2");
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
-let day = days[now.getDay()];
-
-let displayedDate = document.querySelector("#date");
-displayedDate.innerHTML = `${day}`;
-//
 function formatDay(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDay();
@@ -28,7 +12,7 @@ function formatDay(timestamp) {
   ];
   return days[day];
 }
-//
+
 function displayForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
@@ -67,8 +51,6 @@ function displayForecast(response) {
   forecastHTML = forecastHTML + `</div>`;
   forecastElement.innerHTML = forecastHTML;
 }
-
-//life city search
 
 function getForecast(coordinates) {
   let apiKey = "d40278b3a2665b090377296b072f8feb";
@@ -114,7 +96,21 @@ function handleSubmit(event) {
   search(cityInput.value);
 }
 
-//
+let now = new Date();
+let h2 = document.querySelector("h2");
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+
+let displayedDate = document.querySelector("#date");
+displayedDate.innerHTML = `${day}`;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
